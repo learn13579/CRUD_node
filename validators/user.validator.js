@@ -9,13 +9,13 @@ const createUserValidator = Joi.object({
         .regex(LOGIN_REGEX)
         .required()
         .trim(),
-    firstName: Joi
+    firstname: Joi
         .string()
         .regex(NAME_REGEX)
         .trim()
         .required()
         .lowercase(),
-    lastName: Joi
+    lastname: Joi
         .string()
         .regex(NAME_REGEX)
         .alphanum()

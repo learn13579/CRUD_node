@@ -1,41 +1,34 @@
 const {Schema, model} = require('mongoose');
 
 const {UserRoles} = require('../constants');
-const {passwordService} = require('../service');
 
 const userSchema = new Schema({
-    Username:{
+    username:{
         type: String,
         unique: true,
         required: true,
         trim: true
     },
-    FirstName: {
+    firstname: {
         type: String,
         required: true,
         trim: true,
-        minlength: 3,
-        maxlength: 15
     },
-    LastName: {
+    lastname: {
         type: String,
         required: true,
         trim: true,
-        minlength: 3,
-        maxlength: 15
     },
     email: {
         type: String,
         required: true,
         trim: true,
-        select: true
     },
     password: {
         type: String,
         required: true,
         trim: true,
         select: false,
-        minlength: 8
     },
     role: {
         type: String,
